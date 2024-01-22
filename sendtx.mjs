@@ -17,7 +17,7 @@ const createTransaction = async (nonce) => {
         const baseFee = await web3.eth.getGasPrice(); // 获取当前区块的基础燃气费
         //console.log("baseFee:", baseFee)
 
-        const adjustedGasPrice = web3.utils.toWei((parseInt(baseFee) + 1).toString(), 'wei');
+        const adjustedGasPrice = web3.utils.toWei((parseInt(baseFee) + 5).toString(), 'wei');
         //console.log("adjustedGasPrice", adjustedGasPrice)
 
         // 创建交易对象
@@ -28,7 +28,7 @@ const createTransaction = async (nonce) => {
             //gas: 21000,
             gasPrice: adjustedGasPrice,
             nonce: nonce, // 使用获取到的最新 nonce
-            data:'0x'+cryptoRandomString({ length: 131000 })   //'A'.repeat(131000)
+            data:'0x'+cryptoRandomString({ length: 130000 })   //'A'.repeat(131000)
         };
       //console.log('data:', transactionObject.data)
       const estimate = await web3.eth.estimateGas(transactionObject);

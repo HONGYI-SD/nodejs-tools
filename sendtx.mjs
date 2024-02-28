@@ -3,11 +3,11 @@ import Web3 from 'web3';
 import cryptoRandomString from 'crypto-random-string';
 
 // 连接到以太坊节点
-const web3 = new Web3('http://localhost:8545');
+const web3 = new Web3('http://54.226.84.169:8123');
 
-const privateKey = '0xbe82e5f46ee70dbf3f0f27680a06dd71f45b42aa02034c13f7e0b85eb939298c';
-const senderAddress = '0x16f0E85315c5aa39D684390BD75a431850e24A7C';
-const recipientAddress = '0x20424d513DFe18cab20F78b1c6B8135B138674B4';
+const privateKey = '01723d1ff969b774ec0ea1b066554f39d862b3e3128809608a8357f8f88ab953';
+const senderAddress = '0xc3E698abC50f5f62aF88fd24782BC51f8ACBF1ee';
+const recipientAddress = '0x2ECF31eCe36ccaC2d3222A303b1409233ECBB225';
 
 const createTransaction = async (nonce) => {
     try {
@@ -51,7 +51,7 @@ async function main(){
     while(true){
       createTransaction(nonce);
       nonce++
-      await sleep(50)
+      await sleep(60 * 1000)
     }
   } catch (error) {
     console.error("something error: ", error)
